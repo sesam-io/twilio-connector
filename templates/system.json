@@ -1,0 +1,19 @@
+{
+  "_id": "{{@ system @}}",
+  "authentication": "basic",
+  "operations": {
+    "messages-list": {
+      "id_expression": "{{ sid }}",
+      "method": "GET",
+      "next_page_link": "{% if body.next_page_uri is defined %}{{ body.next_page_uri }}{% endif %}",
+      "next_page_termination_strategy": "next-page-link-empty",
+      "payload_property": "messages",
+      "url": "/{{@ api_version @}}/Accounts/{{@ account_SID @}}/Messages.json"
+    }
+  },
+  "password": "$SECRET(api_key)",
+  "type": "system:rest",
+  "url_pattern": "https://api.twilio.com%s",
+  "username": "{{@ keySID @}}",
+  "verify_ssl": true
+}
