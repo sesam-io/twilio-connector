@@ -1,1 +1,2 @@
-# twilio-connector
+# Twilio
+A Sesam connector for Twilio
